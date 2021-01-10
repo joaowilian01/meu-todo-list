@@ -13,7 +13,14 @@ formAddTodo.addEventListener('submit', event => {
         <i class="far fa-trash-alt delete"></i>
       </li>
     `
-
     event.target.reset()
+  }
+})
+
+todosContainer.addEventListener('click', event => {
+  const clickedElement = event.target
+
+  if (Array.from(clickedElement.classList).includes('delete')) {
+    clickedElement.parentElement.remove()
   }
 })
